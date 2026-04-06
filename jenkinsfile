@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        docker
+            {
+                image "node:24"
+            }
+    
+    }
+
+    stages {
+        stage('CI DE LA APP') {
+            steps {
+                sh "npm install"
+                sh "ls -l"
+                sh "hostname"
+                // Add your build commands here
+            }
+        }
+        stage('mi segunda etapa') {
+            steps {
+                sh 'echo "prueba"'
+                // Add your build commands here
+            }
+        }
+        
+    }    
+}
